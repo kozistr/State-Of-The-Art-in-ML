@@ -219,7 +219,7 @@ with tf.Session() as s:
                 if valid_acc > max_acc:
                     max_acc = valid_acc
                     print("[+] Updated New max accuracy {:.4f}".format(max_acc))
-                    saver.save(s, "./model/", global_step=(step + epoch * mnist.train.num_examples))
+                    saver.save(s, "./model/" + str(i) + '/', global_step=(step + epoch * mnist.train.num_examples))
 
         if epoch % 2 == 0:
             print("[*] Epoch %03d =>" % epoch, " Average Cost : {:.8f}".format(avg_cost))
